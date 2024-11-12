@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+
+{% block title %} Task list {% endblock %}
+
+{% block content %}
+
+<div class="header" style="text-align:center; color:DodgerBlue; font-weight: bold;">
+    <h1>Tasks</h1>
+</div>
+
+<ul>
+    {% for task in tasks %}
+        {% if task.complete %}
+            <li style="color:rgb(133, 158, 176); font-weight: bold;">{{task}} - Completed</li>
+            <br><br>
+        {% else %}
+            <li style="color:rgb(252, 53, 30); font-weight: bold;">{{task}} - Not Completed</li>
+            <br>
+        {% endif %}
+        
+    {% endfor %}
+</ul>
+
+{% endblock %}
